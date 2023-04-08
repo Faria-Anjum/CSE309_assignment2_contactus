@@ -22,29 +22,22 @@ if($link == false){
 }
 
 //selecting row that matches with password
-$sql = "SELECT password FROM Admin WHERE id='" . $id . "'";
-
-if(mysqli_query($link, $sql)){
-    echo "";
-} else{
-    echo 'ERROR: Unable to execute $sql. '.mysqli_error($link);
-}
+$sql = "SELECT * FROM Admin WHERE id='" . $id . "'";
 
 $get = mysqli_query($link, $sql);
+
+if (mysqli_num_rows($get) == 0){
+    die("ERROR: ID not found. ".mysqli_connect_error());
+}
+
 $row = mysqli_fetch_assoc($get);
 
-echo $id;
-echo $pass;
-echo $row['password'];
-echo $row['id'];
 
-
-
-/*if($id == $row['id'] && $pass == $row['password']){
+if($pass == $row['password']){
     header("location: admin.php");
 } else{
-    echo "<h1 style='display:flex; text-align:center; justify-content:center; text-shadow:0 0 3px black;'>"."Password does not match, please try again."."</h1>";
-}*/
+    echo "<h1 style='display:flex; text-align:center; justify-content:center; text-shadow:0 0 3px black;'>"."ERROR: Password does not match, please try again."."</h1>";
+}
 
 mysqli_close($link);
 
