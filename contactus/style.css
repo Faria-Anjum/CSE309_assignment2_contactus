@@ -1,0 +1,107 @@
+body {
+    margin-top: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: rgb(226, 234, 237);
+    background-image: url(bg2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.admin-login {
+    display: flex;
+    justify-content: center;
+    float: right;
+}
+
+.admin-login a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+h1 {
+    text-shadow: 0 0 3px black;
+}
+
+.box {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 50px;
+    width: 40%;
+    
+}
+
+.field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+input {
+    height: 50px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.ment {
+    height: 150px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    height: 50px;
+    width: 100px;
+    align-self: center;
+    color: white;
+    background: radial-gradient(rgb(0, 136, 255, 1), rgba(0, 157, 255, 1));
+    border-radius: 20px;
+    margin-top: 20px;
+}
+.button:hover {
+    background: aliceblue;
+    color: rgb(0, 110, 255);
+}
+
+a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 920px) {
+    label{
+        margin-right: 20px;
+    }
+    .box {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .box {
+        padding: 20px 0;
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    .field {
+        display: inline;
+    }
+
+    label {
+        display: inline;
+    }
+
+    input, textarea {
+        margin-top: 8px;
+    }
+}
